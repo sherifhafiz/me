@@ -1,0 +1,47 @@
+name: Build and Deploy Site
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+
+      - name: Build site with Hugo
+        run: hugo --minify
+
+      - name: Check HTML
+        uses: html-proofer/html-proofer@v5
+        with:
+          directory: "./public"
+          check_external_hash: true
+          empty_alt_ignore: true
+          disable_external: true
+          check_opengraph: true
+          url_ignore:
+            - "#"
+            - "^mailto:"
+          log_level: "error"
+
+      - name: Deploy to GitHub Pages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
