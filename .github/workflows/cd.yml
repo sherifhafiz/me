@@ -26,11 +26,11 @@ jobs:
       - name: Build site with Hugo
         run: hugo --minify
 
-        - name: Checkout action repository
-          uses: actions/checkout@v2
-          with:
-            repository: gjtorikian/html-proofer
-            ref: v5.0.7
+      - name: Checkout action repository
+        uses: actions/checkout@v2
+        with:
+          repository: gjtorikian/html-proofer
+          ref: v5.0.7
 
 
       - name: Check HTML
