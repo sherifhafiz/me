@@ -31,12 +31,8 @@ jobs:
         with:
           repository: gjtorikian/html-proofer
           ref: v5.0.7
-          directory: "./public"
-          check_external_hash: true
-          empty_alt_ignore: true
+          directory_index_file: "index.html"
           disable_external: true
-          check_opengraph: true
-          check_html: true
           log_level: "error"
 
       - name: Deploy to GitHub Pages
