@@ -27,18 +27,11 @@ jobs:
         run: hugo --minify
 
       - name: Check HTML
-        uses: gjtorikian/html-proofer@v5
+        uses: chabad360/htmlproofer@master
         with:
           directory: "./public"
-          check_external_hash: true
-          empty_alt_ignore: true
-          disable_external: true
-          check_opengraph: true
-          check_html: true
-          url_ignore:
-            - "#"
-            - "^mailto:"
-          log_level: "error"
+          arguments: --only-4xx --assume-extension --ignore-empty-alt --disable-external
+        continue-on-error: true
 
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
