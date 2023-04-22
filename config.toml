@@ -1,0 +1,9 @@
+baseURL = 'https://me.github.io/'
+languageCode = 'en-gb'
+title = 'My New Hugo Site'
+theme = "beautifulhugo"
+enableEmoji = true
+
+[Params]
+
+    useHLJS = true
