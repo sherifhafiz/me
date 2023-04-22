@@ -27,7 +27,7 @@ jobs:
         run: hugo --minify
 
       - name: Check HTML
-        uses: gjtorikian/html-proofer@master
+        uses: gjtorikian/html-proofer@v5.0.7
         with:
           directory: "./public"
           check_external_hash: true
