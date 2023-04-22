@@ -34,7 +34,7 @@ jobs:
 
 
       - name: Check HTML
-        uses: ./html-proofer
+        uses: ./
         with:
           directory: "./public"
           check_external_hash: true
