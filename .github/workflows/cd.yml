@@ -31,9 +31,6 @@ jobs:
         with:
           repository: gjtorikian/html-proofer
           ref: v5.0.7
-          directory_index_file: "index.html"
-          disable_external: true
-          log_level: "error"
 
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
