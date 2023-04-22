@@ -34,9 +34,7 @@ jobs:
           empty_alt_ignore: true
           disable_external: true
           check_opengraph: true
-          url_ignore:
-            - "#"
-            - "^mailto:"
+          check_html: true
           log_level: "error"
 
       - name: Deploy to GitHub Pages
