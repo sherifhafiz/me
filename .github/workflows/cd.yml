@@ -27,13 +27,14 @@ jobs:
         run: hugo --minify
 
       - name: Check HTML
-        uses: html-proofer/html-proofer@v5
+        uses: gjtorikian/html-proofer@v5
         with:
           directory: "./public"
           check_external_hash: true
           empty_alt_ignore: true
           disable_external: true
           check_opengraph: true
+          check_html: true
           url_ignore:
             - "#"
             - "^mailto:"
