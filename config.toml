@@ -12,8 +12,8 @@ pygmentsCodefencesGuessSyntax = true
 #googleAnalytics = "XXX"
 
 [Params]
-  homeTitle = "Beautiful Hugo Theme" # Set a different text for the header on the home page
-  subtitle = "Build a beautiful and simple website in minutes"
+  homeTitle = "Taming the chaos of the mind" # Set a different text for the header on the home page
+  subtitle = "Simplifying the mind, organizing the chaos"
   mainSections = ["post","posts"]
   logo = "img/avatar-icon.png" # Expecting square dimensions
   favicon = "img/favicon.ico"
@@ -48,7 +48,7 @@ pygmentsCodefencesGuessSyntax = true
   website = "yourwebsite.com"
   email = "youremail@domain.com"
   # facebook = "username"
-  github = "username"
+  github = "sherifhafiz"
   # gitlab = "username"
   # bitbucket = "username"
   twitter = "username"
@@ -112,3 +112,8 @@ pygmentsCodefencesGuessSyntax = true
     name = "Tags"
     url = "tags"
     weight = 3
+
+[[menu.main]]
+    name = "Archive"
+    url = "page/archive/"
+    weight = 4
